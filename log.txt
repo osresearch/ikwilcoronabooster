@@ -1,30 +1,8 @@
-di 21 dec 2021 12:52:05 CET
-
-1990: {"success":false}
-1989: {"success":false}
-1988: {"success":false}
-1987: {"success":false}
-1986: {"success":false}
-1985: {"success":false}
-1984: {"success":false}
-1983: {"success":false}
-1982: {"success":false}
-1981: {"success":false}
-1980: {"success":false}
-1979: {"success":false}
-1978: {"success":false}
-1977: {"success":false}
-1976: {"success":false}
-1975: {"success":false}
-1974: {"success":false}
-1973: {"success":false}
-1972: {"success":false}
-1971: {"success":false}
-1970: {"success":false}
-1969: {"success":false}
-1968: {"success":false}
-1967: {"success":false}
-1966: {"success":false}
-1965: {"success":false}
-1964: {"success":true}
-----
+2021-12-21 12:57:15 1971: {"success":false}
+2021-12-21 12:57:18 1970: {"success":false}
+2021-12-21 12:57:20 1969: {"success":false}
+2021-12-21 12:57:22 1968: {"success":false}
+2021-12-21 12:57:24 1967: {"success":false}
+2021-12-21 12:57:26 1966: {"success":false}
+2021-12-21 12:57:28 1965: {"success":false}
+2021-12-21 12:57:30 1964: {"success":true}
