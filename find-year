@@ -7,16 +7,22 @@ fi
 
 success='???'
 
+date > log.txt
+
 for year in `seq "$first" -1 1962`; do
-	response="`curl \
+	echo >> log.txt
+	echo -n "$year: " >> log.txt
+
+	curl \
 		--silent \
 		https://user-api.coronatest.nl/vaccinatie/programma/booster/$year/NEE \
-	`"
+	| tee -a log.txt \
+	> $year.txt
 
 	#echo "$year $response"
-	echo "$response" | grep 'Rate limit' && exit 1
+	grep 'Rate limit' $year.txt && exit 1
 
-	if echo "$response" |  grep '{"success":true}' ; then
+	if grep '{"success":true}' $year.txt ; then
 		echo >&2 "$year is the year"
 		success="$year"
 		break
@@ -25,6 +31,9 @@ for year in `seq "$first" -1 1962`; do
 	# limit rate of requests
 	sleep 2
 done
+
+echo >> log.txt
+echo ---- >> log.txt
 
 now="`date '+%Y-%m-%d %H:%M:%S'`"
 cat template.html \
