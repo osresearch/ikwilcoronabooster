@@ -3,6 +3,6 @@
 ./find-year "$@"
 
 git add index.html
-git commit -m "`grep =year index.html`"
+git commit --author="automation <automation@example.com>" -m "`grep =year index.html`"
 git push -f origin main:gh-pages
 

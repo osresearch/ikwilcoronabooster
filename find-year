@@ -17,7 +17,7 @@ for year in `seq "$first" -1 1962`; do
 	echo "$response" | grep 'Rate limit' && exit 1
 
 	if echo "$response" |  grep '{"success":true}' ; then
-		echo >&2 "$year"
+		echo >&2 "$year is the year"
 		success="$year"
 		break
 	fi
