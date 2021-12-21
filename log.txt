@@ -1,5 +1,25 @@
-di 21 dec 2021 12:44:12 CET
+di 21 dec 2021 12:52:05 CET
 
+1990: {"success":false}
+1989: {"success":false}
+1988: {"success":false}
+1987: {"success":false}
+1986: {"success":false}
+1985: {"success":false}
+1984: {"success":false}
+1983: {"success":false}
+1982: {"success":false}
+1981: {"success":false}
+1980: {"success":false}
+1979: {"success":false}
+1978: {"success":false}
+1977: {"success":false}
+1976: {"success":false}
+1975: {"success":false}
+1974: {"success":false}
+1973: {"success":false}
+1972: {"success":false}
+1971: {"success":false}
 1970: {"success":false}
 1969: {"success":false}
 1968: {"success":false}
@@ -7,3 +27,4 @@ di 21 dec 2021 12:44:12 CET
 1966: {"success":false}
 1965: {"success":false}
 1964: {"success":true}
+----
