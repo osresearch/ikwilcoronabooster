@@ -4,5 +4,5 @@
 
 git add index.html
 git commit -m "`grep =year index.html`"
-git push -f main:gh-pages
+git push -f origin main:gh-pages
 
