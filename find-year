@@ -37,6 +37,6 @@ echo ---- >> log.txt
 
 now="`date '+%Y-%m-%d %H:%M:%S'`"
 cat template.html \
-	| sed "s/YEAR/$year/" \
+	| sed "s/YEAR/$success/" \
 	| sed "s/WHEN/$now/" \
 > index.html
