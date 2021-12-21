@@ -19,7 +19,7 @@ for year in `seq "$first" -1 1962`; do
 	| tee -a log.txt \
 	> $year.txt
 
-	#echo "$year $response"
+	echo >&2 "$year: `cat $year.txt`"
 	grep 'Rate limit' $year.txt && exit 1
 
 	if grep '{"success":true}' $year.txt ; then
