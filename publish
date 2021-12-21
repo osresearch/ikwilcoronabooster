@@ -1,0 +1,8 @@
+#!/bin/sh
+
+./find-year
+
+git add index.html
+git commit -m "`grep =year` index.html`"
+git push -f git@github.com:osresearch/ikwilcoronabooster.git main:gh-pages
+
