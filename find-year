@@ -7,19 +7,18 @@ fi
 
 success='???'
 
-date > log.txt
-
 for year in `seq "$first" -1 1962`; do
-	echo >> log.txt
-	echo -n "$year: " >> log.txt
+	now="`date '+%Y-%m-%d %H:%M:%S'`"
+	echo -n "$now $year: " >> log.txt
 
 	curl \
 		--silent \
 		https://user-api.coronatest.nl/vaccinatie/programma/booster/$year/NEE \
 	| tee -a log.txt \
 	> $year.txt
+	echo >> log.txt
 
-	echo >&2 "$year: `cat $year.txt`"
+	echo >&2 "$now $year: `cat $year.txt`"
 	grep 'Rate limit' $year.txt && exit 1
 
 	if grep '{"success":true}' $year.txt ; then
@@ -32,10 +31,6 @@ for year in `seq "$first" -1 1962`; do
 	sleep 2
 done
 
-echo >> log.txt
-echo ---- >> log.txt
-
-now="`date '+%Y-%m-%d %H:%M:%S'`"
 cat template.html \
 	| sed "s/YEAR/$success/" \
 	| sed "s/WHEN/$now/" \
