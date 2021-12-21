@@ -1,0 +1,28 @@
+#!/bin/sh
+
+for year in `seq 1963 -1 1962`; do
+	response="`curl \
+		--silent \
+		https://user-api.coronatest.nl/vaccinatie/programma/booster/$year/NEE \
+	`"
+
+	#echo "$year $response"
+	echo "$response" | grep 'Rate limit' && exit 1
+
+	if echo "$response" |  grep '{"success":true}' ; then
+		now="`date '+%Y-%m-%d %H:%M:%S'`"
+		echo "$year"
+		cat template.html \
+		| sed "s/YEAR/$year/" \
+		| sed "s/WHEN/$now/" \
+		> index.html
+
+		exit 0
+	fi
+
+	# limit rate of requests
+	sleep 2
+done
+
+echo "???"
+exit 1
