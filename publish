@@ -6,9 +6,6 @@ die() { echo >&2 "$@" ; exit 1 ; }
 
 git add index.html  || die "unable to add index"
 
-git config user.email "automation@example.com"
-git config user.name "automation"
-
 git commit \
 	-m "`grep =year index.html`"  \
 || die "unable to commit"
