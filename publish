@@ -5,8 +5,11 @@ die() { echo >&2 "$@" ; exit 1 ; }
 ./find-year "$@" || die "unable to find the year"
 
 git add index.html  || die "unable to add index"
+
+git config user.email "automation@example.com"
+git config user.name "automation"
+
 git commit \
-	--author="automation <automation@example.com>" \
 	-m "`grep =year index.html`"  \
 || die "unable to commit"
 
