@@ -1,8 +1,17 @@
-#!/bin/sh
+#!/bin/sh -x
 
-./find-year "$@"
+die() { echo >&2 "$@" ; exit 1 ; }
 
-git add index.html
-git commit --author="automation <automation@example.com>" -m "`grep =year index.html`"
-git push -f origin main:gh-pages
+./find-year "$@" || die "unable to find the year"
 
+git add index.html  || die "unable to add index"
+git commit \
+	--author="automation <automation@example.com>" \
+	-m "`grep =year index.html`"  \
+|| die "unable to commit"
+
+git push -f origin main:gh-pages \
+|| die "unable to push"
+
+echo "Success"
+exit 0
