@@ -12,3 +12,7 @@ the the API, so it can't run as a github action.
 
 So instead it runs in a loop on a desktop machine somewhere.
 
+
+*NOTE* If you want to change anything, do not touch the `index.html`
+since it is overwritten by the `publish` script each time.  Update
+`template.html` instead.
