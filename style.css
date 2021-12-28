@@ -1,0 +1,38 @@
+/* default (light) color palette */
+:root {
+	background: white;
+	color: black;
+	--link-text: blue;
+	--link-text-visited: purple;
+}
+
+/* dark mode color palette */
+@media (prefers-color-scheme: dark) {
+	:root {
+		background: #181831;
+		color: white;
+		--link-text: #62b2e6;
+		--link-text-visited: #9d7c9b;
+	}
+}
+
+body {
+	font-size: 1.2em;
+	font-family: Avenir, "Avenir Next", sans-serif;
+	padding: 10px;
+}
+
+h1 {
+	font-size: 5em;
+	text-align: center;
+}
+
+a:link {
+	color: var(--link-text);	
+	text-decoration: none;
+}
+
+a:visited {
+	color: var(--link-text-visited);	
+	text-decoration: none;
+}
