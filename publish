@@ -7,7 +7,7 @@ die() { echo >&2 "$@" ; exit 1 ; }
 git add index.html log.txt || die "unable to add index"
 
 git commit \
-	-m "`grep =year index.html`"  \
+	-m "`grep '<h1>' index.html`"  \
 || die "unable to commit"
 
 git push -f origin main:gh-pages \
